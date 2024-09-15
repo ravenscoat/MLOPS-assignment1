@@ -76,3 +76,8 @@ checkVIF(X_train_new)
 lm = sm.OLS(y_train,X_train_new).fit()
 
 y_train_price = lm.predict(X_train_new)
+
+import pickle
+
+with open('model.pkl', 'wb') as file:
+    pickle.dump(lm, file)
